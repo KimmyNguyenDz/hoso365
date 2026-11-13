@@ -1,0 +1,52 @@
+{
+  "version": 2,
+  "name": "hoso365-thpt-lehongphong",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
+      ]
+    },
+    {
+      "source": "/(Mau_Lich_Bao_Giang_.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
+      ]
+    }
+  ],
+  "routes": [
+    {
+      "src": "/Mau_Lich_Bao_Giang_HoSo365.xlsx",
+      "dest": "/Mau_Lich_Bao_Giang_HoSo365.xlsx"
+    },
+    {
+      "src": "/Mau_Lich_Bao_Giang_HoSo365.csv",
+      "dest": "/Mau_Lich_Bao_Giang_HoSo365.csv"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
+}
